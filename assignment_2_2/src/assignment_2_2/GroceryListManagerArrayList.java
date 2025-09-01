@@ -2,7 +2,7 @@ package assignment_2_2;
 
 import java.util.ArrayList;
 
-public class GroceryListManager {
+public class GroceryListManagerArrayList {
 
     private final ArrayList<String> groceryList = new ArrayList<>();
 
@@ -44,7 +44,7 @@ public class GroceryListManager {
     // Main method
 
     public static void main(String[] args) {
-        GroceryListManager groceryListManager = new GroceryListManager();
+        GroceryListManagerArrayList groceryListManager = new GroceryListManagerArrayList();
 
         // Add items
         groceryListManager.addItem("Apple");
