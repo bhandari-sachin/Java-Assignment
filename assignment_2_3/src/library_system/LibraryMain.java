@@ -1,8 +1,5 @@
 package library_system;
 
-
-
-
 public class LibraryMain {
     public static void main(String[] args) {
 
@@ -12,7 +9,6 @@ public class LibraryMain {
         Book book3 = new Book("The Art of Fiction", "Alice Johnson", 2019);
 
         Library library = new Library();
-
         library.addBook(book1);
         library.addBook(book2);
         library.addBook(book3);
@@ -61,8 +57,37 @@ public class LibraryMain {
             System.out.printf("Most Reviewed Book: \"%s\" with %d reviews.%n",
                     mostReviewed.getTitle(), mostReviewed.getReviews().size());
         }
+        System.out.println();
+
+        // === TASK 6: Library Users ===
+        System.out.println("=== Library Users ===\n");
+        User alice = new User("Alice");
+        User bob = new User("Bob");
+
+        library.addUser(alice);
+        library.addUser(bob);
+
+        // Users borrow books
+        library.borrowBook("Introduction to Java Programming", alice);
+        library.borrowBook("The Art of Fiction", bob);
+
+        // Display borrowed books
+        System.out.println("Alice borrowed: ");
+        for (Book b : alice.getBorrowedBooks()) {
+            System.out.printf("- \"%s\" by %s%n", b.getTitle(), b.getAuthor());
+        }
+
+        System.out.println("Bob borrowed: ");
+        for (Book b : bob.getBorrowedBooks()) {
+            System.out.printf("- \"%s\" by %s%n", b.getTitle(), b.getAuthor());
+        }
+
+        // Users return books
+        library.returnBook(alice.getBorrowedBooks().get(0), alice);
+        library.returnBook(bob.getBorrowedBooks().get(0), bob);
+
+        // Final library catalog
+        System.out.println("\nFinal Library Catalog:");
+        library.displayBooks();
     }
 }
-
-
-

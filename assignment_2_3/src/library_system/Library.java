@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 public class Library {
     private ArrayList<Book> books = new ArrayList<>();
+    private ArrayList<User> users = new ArrayList<>(); // Task 6: track users
+
+    // Task 6: Add a user
+    public void addUser(User user) {
+        users.add(user);
+    }
 
     // Task 1: Method to add a book to the library
     public void addBook(Book book) {
@@ -15,7 +21,7 @@ public class Library {
         System.out.println("Library Catalog.");
         int count = 1;
         for (Book book : books) {
-            System.out.println(count + ". " + book.toString());
+            System.out.println(count + ". " + book);
             count++;
         }
         System.out.println();
@@ -101,6 +107,30 @@ public class Library {
         }
 
         return mostReviewedBook;
+    }
+
+    // Task 6: Borrow a book for a specific user
+    public void borrowBook(String title, User user) {
+        for (Book book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                books.remove(book);
+                user.borrowBook(book);
+                System.out.println("Book \"" + book.getTitle() + "\" borrowed by " + user.getName() + ".");
+                return;
+            }
+        }
+        System.out.println("Book \"" + title + "\" is not available.");
+    }
+
+    // Return a book from a user
+    public void returnBook(Book book, User user) {
+        if (user.getBorrowedBooks().contains(book)) {
+            user.returnBook(book);
+            books.add(book);
+            System.out.println("Book \"" + book.getTitle() + "\" returned by " + user.getName() + ".");
+        } else {
+            System.out.println(user.getName() + " did not borrow \"" + book.getTitle() + "\".");
+        }
     }
 
 
