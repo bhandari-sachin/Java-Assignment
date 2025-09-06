@@ -1,8 +1,9 @@
 package vehicle.abstractclasses;
 
 import vehicle.interfaces.Vehicle;
+import vehicle.interfaces.ElectricVehicle;
 
-public class AbstractVehicle implements Vehicle {
+public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     protected String type;
     protected String fuel;
     protected String color;
@@ -17,7 +18,6 @@ public class AbstractVehicle implements Vehicle {
     }
 
 
-
     @Override
     public String getInfo() {
         String info = "Vehicle Information:\nType: " + type + "\nFuel: " + fuel;
@@ -29,12 +29,14 @@ public class AbstractVehicle implements Vehicle {
     }
 
     @Override
-    public void start() {
-
+    public void charge() {
+        System.out.println("Not possible to charge for " + type);
     }
 
     @Override
-    public void stop() {
+    public abstract void start();
 
-    }
+    @Override
+    public abstract void stop();
+
 }
