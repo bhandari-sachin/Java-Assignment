@@ -3,8 +3,8 @@ package library_system;
 import java.util.ArrayList;
 
 public class Library {
-    private ArrayList<Book> books = new ArrayList<>();
-    private ArrayList<User> users = new ArrayList<>(); // Task 6: track users
+    private final ArrayList<Book> books = new ArrayList<>();
+    private final ArrayList<User> users = new ArrayList<>(); // Task 6: track users
 
     // Task 6: Add a user
     public void addUser(User user) {

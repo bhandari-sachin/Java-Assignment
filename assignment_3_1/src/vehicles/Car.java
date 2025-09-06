@@ -24,7 +24,7 @@ public class Car {
     public Car(String typeName, double tankCapacity, double speed) {
         this.typeName = typeName;
         this.tankCapacity = tankCapacity;
-        this.speed = Math.abs(speed);  // Use abs instead of Math
+        this.speed = speed;
         this.gasolineLevel = 0;     // Start with empty tank
         cruiseControlOn = false;
         targetSpeed = 0;

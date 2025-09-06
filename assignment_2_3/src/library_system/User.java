@@ -5,8 +5,8 @@ package library_system;
 import java.util.ArrayList;
 
 public class User {
-    private String name;
-    private ArrayList<Book> borrowedBooks;
+    private final String name;
+    private final ArrayList<Book> borrowedBooks;
 
     // Constructor
     public User(String name) {
