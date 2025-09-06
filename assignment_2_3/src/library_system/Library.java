@@ -40,7 +40,7 @@ public class Library {
     }
 
     // Task 2: Borrow a book by title
-    public Book borrowBook(String title){
+    public Book borrowBook(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 books.remove(book);
@@ -53,7 +53,7 @@ public class Library {
     }
 
     // Task 2: Return a book to the library
-    public void returnBook(Book book){
+    public void returnBook(Book book) {
         if (book != null) {
             books.add(book);
             System.out.println("Book \"" + book.getTitle() + "\" returned.");
@@ -62,7 +62,7 @@ public class Library {
 
     // Task 3: Method to check if book is available of a specific title
 
-    public boolean isBookAvailable(String title){
+    public boolean isBookAvailable(String title) {
         for (Book book : books) {
             if (book.getTitle().equalsIgnoreCase(title)) {
                 return true;
@@ -71,6 +71,37 @@ public class Library {
         return false;
     }
 
+    // Task 5: Calculate the average rating of all books in the library
+    public double getAverageBookRating() {
+        if (books.isEmpty()) {
+            return 0.0;
+        }
+        double totalRating = 0.0;
+        for (Book book : books) {
+            totalRating += book.getRating();
+        }
+        return totalRating / books.size();
+    }
+
+    // Task 5: Find the book with the most reviews
+    public Book getMostReviewedBook() {
+        if (books.isEmpty()) {
+            return null; // No books in library
+        }
+
+        Book mostReviewedBook = books.get(0);
+        int maxReviews = mostReviewedBook.getReviews().size();
+
+        for (Book book : books) {
+            int reviewCount = book.getReviews().size();
+            if (reviewCount > maxReviews) {
+                mostReviewedBook = book;
+                maxReviews = reviewCount;
+            }
+        }
+
+        return mostReviewedBook;
+    }
 
 
 }
