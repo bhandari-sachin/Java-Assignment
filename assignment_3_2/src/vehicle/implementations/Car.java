@@ -1,9 +1,12 @@
 package vehicle.implementations;
 
 import vehicle.interfaces.Vehicle;
+import vehicle.abstractclasses.AbstractVehicle;
 
-public class Car implements Vehicle {
-    private final String type = "Car";
+public class Car extends AbstractVehicle {
+    public Car() {
+        super("Car", "Petrol", "Red", 0);
+    }
 
 
     @Override
@@ -11,15 +14,10 @@ public class Car implements Vehicle {
         System.out.println(type + " is starting...");
 
     }
+
     @Override
     public void stop() {
         System.out.println(type + " is stopping...");
     }
 
-    @Override
-    public String getInfo() {
-        String color = "Red";
-        String fuel = "Petrol";
-        return "Vehicle Information:\nType: " + type + "\nFuel: " + fuel + "\nColor: " + color;
-    }
 }
