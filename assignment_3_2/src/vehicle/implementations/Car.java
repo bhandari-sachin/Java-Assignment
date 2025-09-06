@@ -5,7 +5,7 @@ import vehicle.abstractclasses.AbstractVehicle;
 
 public class Car extends AbstractVehicle {
     public Car() {
-        super("Car", "Petrol", "Red", 0);
+        super("Car", "Petrol", "Red", 0, 8.0, "L/100 km");
     }
 
 
