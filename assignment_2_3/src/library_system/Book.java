@@ -34,7 +34,7 @@ public class Book {
         return publicationYear;
     }
 
-    // Task 4: Set the rating of the book
+    // Task 4: Set the rating of the book //
     public void setRating(double rating) {
         if (rating >= 0.0 && rating <= 5.0) {
             this.rating = rating;

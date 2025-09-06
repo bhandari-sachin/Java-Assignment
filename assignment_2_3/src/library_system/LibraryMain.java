@@ -17,7 +17,7 @@ public class LibraryMain {
         library.findBooksByAuthor("Jane Doe");
         System.out.println();
 
-        // === TASK 2: Borrowing System ===
+        // === TASK 2: Borrowing System ====
         System.out.println("=== Borrowing Books ===\n");
         Book borrowedBook = library.borrowBook("Data Structures and Algorithms");
         library.borrowBook("Unknown Book");

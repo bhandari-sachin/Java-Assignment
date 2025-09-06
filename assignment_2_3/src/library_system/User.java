@@ -23,7 +23,7 @@ public class User {
         borrowedBooks.add(book);
     }
 
-    // Return a book
+    // Return a book //
     public void returnBook(Book book) {
         borrowedBooks.remove(book);
     }
