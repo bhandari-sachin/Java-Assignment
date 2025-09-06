@@ -17,6 +17,8 @@ public class VehicleMainTest {
             v.start();
             v.stop();
             System.out.println(v.getInfo());
+            System.out.printf("Fuel Efficiency: %.2f %s%n",
+                    v.calculateFuelEfficiency(), v.getFuelEfficiencyUnit());
             v.charge();
             System.out.println();
         }

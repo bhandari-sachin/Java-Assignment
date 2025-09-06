@@ -5,7 +5,7 @@ import vehicle.abstractclasses.AbstractVehicle;
 public class ElectricMotorcycle extends AbstractVehicle {
 
     public ElectricMotorcycle() {
-        super("Electric Motorcycle", "Electric", "Green", 0, 10.0, "kWh/100 km");
+        super("Electric Motorcycle", "Electric", "Green", 2, 100, 3.0, "kWh/100 km");
     }
 
     @Override

@@ -8,16 +8,20 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     protected String fuel;
     protected String color;
     protected int capacity;
-    protected double fuelEfficiency;
-    protected String fuelEfficiencyUnit;
 
-    public AbstractVehicle(String type, String fuel, String color, int capacity, double fuelEfficiency, String fuelEfficiencyUnit) {
+    // For fuel efficiency calculation
+    protected double distance; // in km
+    protected double fuelConsumed; // consumed fuel in liters or kWh
+    protected String fuelEfficiencyUnit; //   L/ 100km or kWh/100 km
+
+    public AbstractVehicle(String type, String fuel, String color, int capacity, double distance, double fuelConsumed, String fuelEfficiencyUnit) {
         this.type = type;
         this.fuel = fuel;
         this.color = color;
         this.capacity = capacity;
-        this.fuelEfficiency = fuelEfficiency;
-        this.fuelEfficiencyUnit = fuelEfficiencyUnit; /*   L/100km or kWh/100 km   */
+        this.distance = distance;
+        this.fuelConsumed = fuelConsumed;
+        this.fuelEfficiencyUnit = fuelEfficiencyUnit;
     }
 
     @Override
@@ -27,13 +31,19 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
             info += "\nCapacity: " + capacity + " passengers";
         }
         info += "\nColor: " + color;
-        info += String.format("\nFuel Efficiency: %.2f %s", fuelEfficiency, fuelEfficiencyUnit);
         return info;
     }
 
     @Override
     public double calculateFuelEfficiency() {
-        return fuelEfficiency;
+        if (distance == 0) {
+            return 0;
+        }
+        return (fuelConsumed / distance) * 100;
+    }
+
+    public String getFuelEfficiencyUnit() {
+        return fuelEfficiencyUnit;
     }
 
 
@@ -47,4 +57,6 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
 
     @Override
     public abstract void stop();
+
+
 }
