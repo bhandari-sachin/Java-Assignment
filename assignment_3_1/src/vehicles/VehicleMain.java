@@ -5,20 +5,31 @@ public class VehicleMain {
         // === Create vehicles ===
         Car familyCar = new Car("FamilyCar", 50, 0);
         SportsCar ferrari = new SportsCar("Ferrari", 60, 0);
+        Bus cityBus = new Bus("CityBus", 100, 0, 30);
 
+        // === Test normal Car ===
         System.out.println("=== NORMAL CAR TEST ===");
         testVehicle(familyCar);
 
+        // === Test ferrari ===
         System.out.println("\n=== SPORTS CAR TEST ===");
         testVehicle(ferrari);
 
-        System.out.println("\nAdditional SportsCar accelerations:");
-        ferrari.accelerate();
-        ferrari.accelerate();
-        printStatus(ferrari, "after 2 more accelerations");
+        // === Test Bus ===
+        System.out.println("\n=== BUS TEST ===");
+        System.out.println("Initial passengers: " + cityBus.getCurrentPassengers() + "/" + cityBus.getMaxCapacity());
+
+        cityBus.passengerEnter(15);
+        System.out.println("After 15 enter: " + cityBus.getCurrentPassengers() + "/" + cityBus.getMaxCapacity());
+
+
+        cityBus.passengerExit(8);
+        System.out.println("After 8 exit: " + cityBus.getCurrentPassengers() + "/" + cityBus.getMaxCapacity());
+
     }
 
     private static void testVehicle(Car vehicle) {
+        // Fill tank and show initial state
         vehicle.fillTank();
         System.out.println(vehicle.getTypeName() + " starts with fuel: " + vehicle.getGasolineLevel());
 
