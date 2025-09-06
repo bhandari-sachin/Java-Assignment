@@ -1,5 +1,3 @@
-package BankAccountSys;
-
 public class BankAccount {
 
     // Instance variables
