@@ -1,4 +1,4 @@
-# W – Arrival and Service Events
+# W1 – Arrival and Service Events
 
 **Objective:** Explain why arrival events generate new arrivals and which events are generated at service start.  
 
