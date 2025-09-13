@@ -20,6 +20,14 @@ public class Calculator {
             total += number;
         }
 
+        // TODO: implement subtract method
+        // public void subtract(int number) {
+        //     if (number < 0) {
+        //         throw new IllegalArgumentException("Only positive integers are allowed.");
+        //     }
+        //     total -= number;
+        // }
+
         public int getTotal() {
             return total;
         }

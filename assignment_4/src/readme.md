@@ -57,7 +57,9 @@ Using GitHub Copilot was definitely worth it, and it seems to improve constantly
 
 It's great at generating boilerplate code and following existing patterns. It often predicts the code I was about to write, which speeds up development. Sometimes it feels almost spooky when it generates the code I was about to write.
 
-A handy trick: adding a comment like `// Q: What does the above method do?` helps Copilot generate a concise inline explanation.
+A handy trick: adding a comment like:  
+`// What does the above method do?` helps Copilot generate a concise inline explanation.  
+                                     `// Adds positive integers, throws exception for negative integers` helps Copilot suggest the implementation.
 
 **Benefits:**
 - Saves time on repetitive coding tasks
@@ -66,6 +68,6 @@ A handy trick: adding a comment like `// Q: What does the above method do?` help
 
 **Drawbacks:**
 - You still need to double-check everything; sometimes it suggests unnecessary or slightly off solutions
-- Copilot works best when assisting you in implementing something you already understand, rather than figuring out the solution from scratch
+- Copilot works best when assisting you in implementing something you already understand, rather than figuring out the solution from scratch.
 
 **Overall:** Copilot was extremely helpful for this small project. It sped up implementation while leaving me in control of design and correctness.
