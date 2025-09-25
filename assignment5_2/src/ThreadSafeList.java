@@ -12,8 +12,8 @@ class ThreadSafeList<T> {
     }
 
     // Remove element safely
-    public synchronized boolean remove(T element) {
-        return list.remove(element);
+    public synchronized void remove(T element) {
+        list.remove(element);
     }
 
     // Get size safely
