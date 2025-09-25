@@ -1,6 +1,5 @@
 package assignment_2_2;
 
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,6 +1,5 @@
 package vehicle.implementations;
 
-import vehicle.interfaces.Vehicle;
 import vehicle.abstractclasses.AbstractVehicle;
 
 public class Car extends AbstractVehicle {

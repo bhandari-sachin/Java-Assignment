@@ -1,7 +1,7 @@
 package vehicle.abstractclasses;
 
-import vehicle.interfaces.Vehicle;
 import vehicle.interfaces.ElectricVehicle;
+import vehicle.interfaces.Vehicle;
 
 public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     protected String type;
